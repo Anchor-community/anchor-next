@@ -1,18 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![Anchor maintainer](https://github.com/Anchor-community/anchor-next/blob/images/images/anchor-maintainer-banner.png?raw=true 'Banner')
 
-## Getting Started
+# Anchor community
 
-First, run the development server:
+このサイトは [Next.js](https://nextjs.org/) で作成されています。
+
+## 開発を始める
+
+開発を始めるには、`Devサーバー`を起動する必要があります。
 
 ```bash
-npm run dev
-# or
+# 依存関係のアップデート
+yarn
+
+# Devサーバーの起動
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+サーバーの起動後、 [http://localhost:3000](http://localhost:3000) を確認してください。
 
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
