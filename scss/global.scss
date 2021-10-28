@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+@font-face {
+  font-family: 'Optician';
+  src: url('/assets/fonts/Optician-Sans.ttf');
+}
+
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-size: 14px;
+  min-height: calc(var(--vh, 1vh) * 100);
+  background-color: #fafafa;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
