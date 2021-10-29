@@ -1,8 +1,15 @@
+@import './animation.scss';
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 @font-face {
   font-family: 'Optician';
   src: url('/assets/fonts/Optician-Sans.ttf');
+}
+
+@font-face {
+  font-family: 'Zou';
+  src: url('/assets/fonts/Zou.ttf');
 }
 
 html,
@@ -18,6 +25,7 @@ body {
   cursor: none;
 }
 
-button, a {
+button,
+a {
   cursor: none;
 }

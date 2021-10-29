@@ -39,9 +39,7 @@ const Cursor: React.FC = (props) => {
   }
 
   useEffect(() => {
-    document.body.addEventListener('mousemove', (e) => {
-      moveCursor(e)
-    })
+    document.body.addEventListener('mousemove', (e) => moveCursor(e))
   })
 
   return (
@@ -55,10 +53,13 @@ const Cursor: React.FC = (props) => {
 const OuterCursor = styled.div`
   position: fixed;
   pointer-events: none;
-  border: solid 1px #000;
+  border: solid 2px #000;
   border-radius: 10px;
   height: 16px;
   width: 16px;
+  filter: invert(100%);
+  mix-blend-mode: exclusion;
+  will-change: filter;
   transform: translate(-50%, -50%);
   z-index: 50;
 `
@@ -72,6 +73,8 @@ const InnerCursor = styled.div`
   width: 6px;
   transform: translate(-50%, -50%);
   z-index: 50;
+  filter: invert(100%);
+  mix-blend-mode: exclusion;
 `
 
 export default Cursor

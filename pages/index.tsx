@@ -1,22 +1,24 @@
 import type { NextPage } from 'next'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Head from 'next/head'
 import IntroScreen from '../components/_special/IntroScreen'
+import PageTransition from '../components/_special/PageTransition'
 import TopPage from '../components/pages/TopPage'
 import Cursor from '../components/_shared/Cursor'
 
 const Home: NextPage = () => {
-  const [isAnimating, setAnimationState] = useState(true)
+  const [isAnimating, setAnimatingState] = useState(false)
+  const [isAnimationFinished, setAnimatedState] = useState(false)
 
-  const start = () => {
-    setAnimationState(false)
+  const timeout = (ms: number) => {
+    return new Promise((resolve) => setTimeout(resolve, ms))
   }
 
-  useEffect(() => {
-    setTimeout(() => {
-      // setAnimationState(true)
-    }, 3000)
-  })
+  const start = async () => {
+    setAnimatingState(true)
+    await timeout(1500)
+    setAnimatedState(true)
+  }
 
   return (
     <>
@@ -27,7 +29,14 @@ const Home: NextPage = () => {
       </Head>
       <Cursor />
 
-      {isAnimating ? <IntroScreen start={start} /> : <TopPage />}
+      {isAnimationFinished ? (
+        <>
+          <PageTransition />
+          <TopPage />
+        </>
+      ) : (
+        <IntroScreen isAnimating={isAnimating} start={start} />
+      )}
     </>
   )
 }

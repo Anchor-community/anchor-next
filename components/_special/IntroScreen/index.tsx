@@ -1,9 +1,11 @@
 import React, { useRef } from 'react'
 import styled from 'styled-components'
 import { gsap } from 'gsap'
+import ParallaxBG from '../../_shared/ParallaxBG'
 
 type Props = {
   start: () => void
+  isAnimating: boolean
 }
 
 const IntroScreen: React.FC<Props> = (props) => {
@@ -21,28 +23,26 @@ const IntroScreen: React.FC<Props> = (props) => {
   }
 
   return (
-    <Container onMouseMove={(e) => handleMouseMove(e)}>
-      <Wrapper ref={logo}>
-        <Logo src="/assets/images/anchor.svg" alt="anchor logo" />
-        <Title>Anchor maintainance team</Title>
-        <StartLink onClick={() => props.start()}>Enter</StartLink>
-      </Wrapper>
-    </Container>
+    <div onMouseMove={(e) => handleMouseMove(e)}>
+      <ParallaxBG>
+        <Wrapper ref={logo}>
+          <Logo src="/assets/images/anchor.svg" alt="anchor logo" />
+          <Title>Anchor maintainers</Title>
+          <StartLink onClick={() => props.start()}>Enter</StartLink>
+        </Wrapper>
+        {props.isAnimating && <Animation />}
+      </ParallaxBG>
+    </div>
   )
 }
-
-const Container = styled.div`
-  min-height: calc(var(--vh, 1vh) * 100);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  min-height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
   gap: 60px;
 `
 
@@ -93,6 +93,34 @@ const StartLink = styled.button`
   &:hover {
     ::after {
       transform: translate(-50%, -50%) scale(2);
+    }
+  }
+`
+
+const Animation = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 2px;
+  width: 0;
+  transform: translate(-50%, -50%);
+  background-color: #000;
+  animation: pageOverlay 1.5s forwards;
+
+  @keyframes pageOverlay {
+    0% {
+      width: 0%;
+      height: 2px;
+    }
+
+    60% {
+      width: 100%;
+      height: 2px;
+    }
+
+    100% {
+      width: 100%;
+      height: calc(var(--vh, 1vh) * 100);
     }
   }
 `
