@@ -15,4 +15,9 @@ body {
   font-family: 'Roboto Mono', monospace;
   text-transform: uppercase;
   letter-spacing: 1px;
+  cursor: none;
+}
+
+button, a {
+  cursor: none;
 }

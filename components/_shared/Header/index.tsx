@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Link from 'next/link'
 
 const Header = class Header extends React.Component {
   render() {
@@ -8,7 +9,9 @@ const Header = class Header extends React.Component {
         <Inner>
           <Logo src="/assets/images/anchor.svg" alt="anchor logo" />
           <Links>
-            <Title>ANCHOR MAINTAINANCE TEAM</Title>
+            <li>
+              <Link href="/">AAA</Link>
+            </li>
           </Links>
         </Inner>
       </Wrapper>
