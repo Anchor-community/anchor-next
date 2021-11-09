@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import { gsap } from 'gsap'
 
-const Cursor: React.FC = (props) => {
+const Cursor: React.FC = () => {
   const inner = useRef(null)
   const outer = useRef(null)
 
@@ -12,27 +12,27 @@ const Cursor: React.FC = (props) => {
     if (target.localName === 'a' || target.localName === 'button') {
       gsap.to(inner.current, {
         duration: 0.001,
-        x: e.pageX,
-        y: e.pageY,
+        x: e.clientX,
+        y: e.clientY,
         scale: 1.5,
       })
       gsap.to(outer.current, {
         duration: 0.3,
-        x: e.pageX,
-        y: e.pageY,
+        x: e.clientX,
+        y: e.clientY,
         scale: 3,
       })
     } else {
       gsap.to(inner.current, {
         duration: 0.001,
-        x: e.pageX,
-        y: e.pageY,
+        x: e.clientX,
+        y: e.clientY,
         scale: 1,
       })
       gsap.to(outer.current, {
         duration: 0.3,
-        x: e.pageX,
-        y: e.pageY,
+        x: e.clientX,
+        y: e.clientY,
         scale: 1,
       })
     }
@@ -40,7 +40,7 @@ const Cursor: React.FC = (props) => {
 
   useEffect(() => {
     document.body.addEventListener('mousemove', (e) => moveCursor(e))
-  })
+  }, [])
 
   return (
     <>

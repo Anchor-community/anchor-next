@@ -5,15 +5,16 @@ type Props = {
   children?: ReactNode
 }
 
-const Component = class Layout extends React.Component<Props> {
+const Layout = class Layout extends React.Component<Props> {
   render() {
     return <Wrapper>{this.props.children}</Wrapper>
   }
 }
 
 const Wrapper = styled.div`
-  max-width: 1280px;
+  padding: 80px 0;
+  max-width: 960px;
   margin: 0 auto;
 `
 
-export default Component
+export default Layout

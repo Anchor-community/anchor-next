@@ -27,8 +27,8 @@ const IntroScreen: React.FC<Props> = (props) => {
       <ParallaxBG>
         <Wrapper ref={logo}>
           <Logo src="/assets/images/anchor.svg" alt="anchor logo" />
-          <Title>Anchor maintainers</Title>
-          <StartLink onClick={() => props.start()}>Enter</StartLink>
+          <Title>The place for creators</Title>
+          <StartLink onClick={() => props.start()}>Check</StartLink>
         </Wrapper>
         {props.isAnimating && <Animation />}
       </ParallaxBG>

@@ -1,15 +1,10 @@
 @import './animation.scss';
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono&display=swap');
 
 @font-face {
   font-family: 'Optician';
   src: url('/assets/fonts/Optician-Sans.ttf');
-}
-
-@font-face {
-  font-family: 'Zou';
-  src: url('/assets/fonts/Zou.ttf');
 }
 
 html,
@@ -18,8 +13,8 @@ body {
   margin: 0;
   font-size: 14px;
   min-height: calc(var(--vh, 1vh) * 100);
-  background-color: #fafafa;
-  font-family: 'Roboto Mono', monospace;
+  background-color: #fff;
+  font-family: 'Roboto Mono', 'Noto Sans JP', monospace;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: none;
