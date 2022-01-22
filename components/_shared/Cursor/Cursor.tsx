@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { gsap } from 'gsap'
 
 const Cursor: React.FC = () => {
@@ -11,7 +11,7 @@ const Cursor: React.FC = () => {
 
     if (target.localName === 'a' || target.localName === 'button') {
       gsap.to(inner.current, {
-        duration: 0.001,
+        duration: 0.01,
         x: e.clientX,
         y: e.clientY,
         scale: 1.5,
@@ -53,7 +53,7 @@ const Cursor: React.FC = () => {
 const OuterCursor = styled.div`
   position: fixed;
   pointer-events: none;
-  border: solid 2px #000;
+  border: solid 2px #ccc;
   border-radius: 10px;
   height: 16px;
   width: 16px;

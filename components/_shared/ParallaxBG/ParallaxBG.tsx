@@ -1,8 +1,8 @@
-import React, { useRef } from 'react'
-import styled from 'styled-components'
+import { FC, useRef } from 'react'
 import { gsap } from 'gsap'
+import styled from '@emotion/styled'
 
-const ParallaxBG: React.FC = (props) => {
+const ParallaxBG: FC = (props) => {
   const bg = useRef(null)
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -24,6 +24,7 @@ const ParallaxBG: React.FC = (props) => {
 
 const Container = styled.div`
   min-height: calc(var(--vh, 1vh) * 100);
+  background-color: #fff;
   background-image: url('/assets/images/grid.svg');
   background-repeat: repeat;
   background-size: 10px;

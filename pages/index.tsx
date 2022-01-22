@@ -1,10 +1,11 @@
 import type { NextPage } from 'next'
 import { useState } from 'react'
 import Head from 'next/head'
-import IntroScreen from '../components/_special/IntroScreen'
-import PageTransition from '../components/_special/PageTransition'
-import TopPage from '../components/pages/TopPage'
-import Cursor from '../components/_shared/Cursor'
+import { IntroScreen } from '~/components/_special/IntroScreen'
+import { PageTransition } from '~/components/_special/PageTransition'
+import { Cursor } from '~/components/_shared/Cursor'
+import { TopPage } from '~/components/pages/TopPage'
+import { Menu } from '~/components/_shared/Menu'
 
 const Home: NextPage = () => {
   const [isAnimating, setAnimatingState] = useState(false)
@@ -32,6 +33,7 @@ const Home: NextPage = () => {
       {isAnimationFinished ? (
         <>
           <PageTransition />
+          <Menu />
           <TopPage />
         </>
       ) : (

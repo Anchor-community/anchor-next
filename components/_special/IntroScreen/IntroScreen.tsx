@@ -1,14 +1,14 @@
-import React, { useRef } from 'react'
-import styled from 'styled-components'
+import { FC, useRef } from 'react'
+import styled from '@emotion/styled'
 import { gsap } from 'gsap'
-import ParallaxBG from '../../_shared/ParallaxBG'
+import { ParallaxBG } from '../../_shared/ParallaxBG'
 
 type Props = {
   start: () => void
   isAnimating: boolean
 }
 
-const IntroScreen: React.FC<Props> = (props) => {
+const IntroScreen: FC<Props> = (props) => {
   const logo = useRef(null)
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -35,6 +35,8 @@ const IntroScreen: React.FC<Props> = (props) => {
     </div>
   )
 }
+
+export default IntroScreen
 
 const Wrapper = styled.div`
   display: flex;
@@ -124,5 +126,3 @@ const Animation = styled.div`
     }
   }
 `
-
-export default IntroScreen

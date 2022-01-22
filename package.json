@@ -19,6 +19,9 @@
     ]
   },
   "dependencies": {
+    "@emotion/babel-plugin": "^11.7.2",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
     "@types/react-typist": "^2.0.3",
     "gsap": "^3.8.0",
     "next": "12.0.1",
@@ -26,7 +29,6 @@
     "prettier": "^2.4.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "styled-components": "^5.3.3",
     "stylelint": "^14.0.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^23.0.0"
@@ -36,7 +38,6 @@
     "@commitlint/config-conventional": "^13.2.0",
     "@types/node": "16.11.6",
     "@types/react": "17.0.33",
-    "@types/styled-components": "^5.1.15",
     "eslint": "7",
     "eslint-config-next": "12.0.1",
     "husky": "^7.0.4",
